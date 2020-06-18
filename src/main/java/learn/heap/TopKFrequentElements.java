@@ -19,7 +19,7 @@ public class TopKFrequentElements {
                 counter.put(i, 0);
             counter.put(i, counter.get(i) + 1);
         }
-        PriorityQueue<Integer> q = new PriorityQueue<>(k,(n1, n2) -> counter.get(n1)-counter.get(n2) );
+        PriorityQueue<Integer> q = new PriorityQueue<>(k, Comparator.comparingInt(counter::get));
         for (int i: counter.keySet()){
             q.add(i);
             if (q.size()>k)
