@@ -25,7 +25,7 @@ class SubarraysWithKDistinctTest {
 
     @ParameterizedTest
     @MethodSource("testData")
-    public void Test1(int[] input, int k, int expected){
+    public void Test1(int[] input, int k, int expected) throws Exception {
         int actual = new SubarraysWithKDistinct().subarraysWithKDistinct(input, k);
         assertEquals(expected,actual);
     }
