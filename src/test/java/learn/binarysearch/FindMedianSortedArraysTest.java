@@ -14,6 +14,7 @@ class FindMedianSortedArraysTest {
 
     private static Stream<Arguments> testData() {
         return Stream.of(
+                Arguments.of(new int[]{1,2}, new int[]{-1,3}, 1.5),
                 Arguments.of(new int[]{1,3}, new int[]{2}, 2.0),
                 Arguments.of(new int[]{1,2}, new int[]{3,4}, 2.5),
                 Arguments.of(new int[]{1}, new int[]{3,4}, 3.0),

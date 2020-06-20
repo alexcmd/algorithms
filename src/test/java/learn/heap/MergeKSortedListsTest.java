@@ -14,14 +14,20 @@ class MergeKSortedListsTest {
 
     private static Stream<Arguments> testData() {
         return Stream.of(
-                Arguments.of()
+                Arguments.of( new ListNode[] {
+                        new ListNode(1, new ListNode(4, new ListNode(5))),
+                        new ListNode(1, new ListNode(3, new ListNode(4))),
+                        new ListNode(2, new ListNode(6)),
+                },
+                        new ListNode(1,new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(4, new ListNode(5, new ListNode(6)))))))))
         );
     }
 
     @ParameterizedTest
     @MethodSource("testData")
     public void Test1(ListNode[] input, ListNode expected){
-        new MergeKSortedLists().mergeKLists(input);
+        ListNode actual = new MergeKSortedLists().mergeKLists(input);
+        assertEquals(expected,actual);
     }
 
 }

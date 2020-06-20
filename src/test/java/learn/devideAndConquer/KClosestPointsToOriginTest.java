@@ -18,7 +18,7 @@ class KClosestPointsToOriginTest {
 
     @ParameterizedTest
     @MethodSource("testData")
-    public void Test1(int[][] input,int k, int[][] expected){
+    public void Test1(int[][] input,int k, int[][] expected) throws Exception {
         int[][] actual = new KClosestPointsToOrigin().kClosest(input, k);
         assertArrayEquals(expected, actual);
 
