@@ -16,7 +16,7 @@ class MinimumNumberOfArrowsToBurstBalloonsTest {
                 Arguments.of(new int[][]{ new int[]{10,16}}, 1),
                 Arguments.of(new int[0][], 0)
         );
-    }w
+    }
 
     @ParameterizedTest
     @MethodSource("testData")
