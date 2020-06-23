@@ -4,7 +4,7 @@ import org.javatuples.Pair;
 
 import java.util.*;
 
-public class TreeSum {
+public class ThreeSum {
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         HashSet<Pair<Integer,Integer>> founded = new HashSet<>();

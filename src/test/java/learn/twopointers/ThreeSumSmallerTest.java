@@ -1,29 +1,26 @@
-package learn.hash;
+package learn.twopointers;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class TreeSumTest {
-
+class ThreeSumSmallerTest {
 
     private static Stream<Arguments> testData() {
         return Stream.of(
-                Arguments.of(new int[]{-1, 0, 1, 2, -1, -4}, Arrays.asList(Arrays.asList(-1, 0, 1), Arrays.asList(-1, 2, -1)))
+                Arguments.of(new int[]{-2,0,1,3},2,2),
+                Arguments.of(new int[]{1,1,-2},1,1)
         );
     }
 
     @ParameterizedTest
     @MethodSource("testData")
-    public void Test1(int[] input, List<List<Integer>> expected){
-        List<List<Integer>> actual = new TreeSum().threeSum(input);
-        assertEquals(expected, actual);
+    public void Test1(int[] input, int target, int expected){
+        int actual = new ThreeSumSmaller().threeSumSmaller(input,target);
+        assertEquals(expected,actual);
     }
-
 }

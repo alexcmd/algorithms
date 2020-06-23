@@ -13,17 +13,16 @@ import java.util.List;
  * Note:
  *  The solution set must not contain duplicate triplets.
  */
-public class TreeSum {
+public class ThreeSum {
     public List<List<Integer>> threeSum(int[] nums) {
         ArrayList<List<Integer>> result = new ArrayList<>();
         if (nums.length<3)
             return result;
         Arrays.sort(nums); // O(nlogn)
         HashSet<Pair<Integer, Integer>> founded = new HashSet<>();
-
-        for (int i = 0; i < nums.length-2; i++) { //O(n^2)
+        int right = nums.length - 1;
+        for (int i = 0; i < nums.length-2; i++) { //O(nlogn)
             int mid = i + 1;
-            int right = nums.length - 1;
             while (mid < right) {
                 int sum = nums[i] + nums[mid] + nums[right];
                 if (sum < 0) {

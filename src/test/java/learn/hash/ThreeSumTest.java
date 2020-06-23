@@ -1,4 +1,4 @@
-package learn.twopointers;
+package learn.hash;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -10,18 +10,20 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class TreeSumTest {
+class ThreeSumTest {
+
 
     private static Stream<Arguments> testData() {
         return Stream.of(
-                Arguments.of(new int[]{-1, 0, 1, 2, -1, -4}, Arrays.asList(Arrays.asList(-1, 0, 1), Arrays.asList(-1,-1,2)))
+                Arguments.of(new int[]{-1, 0, 1, 2, -1, -4}, Arrays.asList(Arrays.asList(-1, 0, 1), Arrays.asList(-1, 2, -1)))
         );
     }
 
     @ParameterizedTest
     @MethodSource("testData")
     public void Test1(int[] input, List<List<Integer>> expected){
-        List<List<Integer>> actual = new TreeSum().threeSum(input);
+        List<List<Integer>> actual = new ThreeSum().threeSum(input);
         assertEquals(expected, actual);
     }
+
 }
