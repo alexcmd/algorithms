@@ -3,6 +3,10 @@ package learn.common;
 
 import java.util.Objects;
 
+/**
+ *  !!!Leetcode predefined code.!!!
+ *  !!!Using fields directly (w/o getters and setters)!!!
+ */
 public class ListNode {
      public int val;
      public ListNode next;
