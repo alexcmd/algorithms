@@ -1,6 +1,7 @@
 package learn.common;
 
 
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -11,6 +12,11 @@ public class ListNode {
      public int val;
      public ListNode next;
      public ListNode() {}
+     public ListNode(int... values) {
+          val = values[0];
+          if (values.length>1)
+               next = new ListNode(Arrays.copyOfRange(values,1, values.length));
+     }
      public ListNode(int val) { this.val = val; }
      public ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 
@@ -33,3 +39,4 @@ public class ListNode {
           return ""+val;
      }
 }
+
