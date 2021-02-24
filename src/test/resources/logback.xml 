@@ -1,0 +1,4 @@
+<!-- Wrap calls to the logger. -->
+<appender name="asyncFile" class="reactor.logback.AsyncAppender">
+    <appender-ref ref="CONSOLE"/>
+</appender>
